@@ -11,8 +11,11 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 0) do
-	create_table "account", primary_key: "username", force: :cascade do |t|
-    	t.text "password", limit: 65535
-  	end
+ActiveRecord::Schema.define(version: 1) do
+
+  create_table "accounts", id: false, force: :cascade do |t|
+    t.string "student_id", limit: 45
+    t.text   "password",   limit: 65535
+  end
+
 end

@@ -15,13 +15,14 @@ class CreateDatabase < ActiveRecord::Migration
 	def self.up
 		ActiveRecord::Schema.define(version: 0) do
 
-  			create_table "account", primary_key: "username", force: :cascade do |t|
-    			t.text "password", limit: 65535
-  			end
+ 	 		create_table "accounts", id: false, force: :cascade do |t|
+    			t.string "student_id", limit: 45
+    			t.text   "password",   limit: 65535
+    		end
 		end
 	end
 
 	def self.down
-		drop_table :account
+		drop_table :accounts
 	end
 end
